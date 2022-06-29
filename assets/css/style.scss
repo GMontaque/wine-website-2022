@@ -1,11 +1,46 @@
+// base code
+*,
+*::after,
+*::before {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: inherit;
+}
+
+html {
+  /*defines what 1rem is*/
+  font-size: 62.5%;
+//   box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+    
+
 .mainScreen{
     display: none;
 }
 
 .overlay{
-
-    img{
-        width: 100vw;
+    background-color: red;
+    &-IMG{
+        width: 100%;
         height: 100vh;
     }
+
+    /* Centered text over image */
+    &-centered {
+        width: 15%;
+        height: 5%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
+
+  
+ 
+  
