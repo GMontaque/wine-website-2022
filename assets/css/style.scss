@@ -2,8 +2,8 @@
 *,
 *::after,
 *::before {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
   box-sizing: inherit;
 }
 
@@ -17,16 +17,17 @@ body {
   box-sizing: border-box;
 }
 
-    
-
-.mainScreen{
-    display: none;
+.row>*{
+    padding: 0;
 }
+
+// first screen overlay
 
 .overlay{
     background-color: red;
+
     &-IMG{
-        width: 100%;
+        
         height: 100vh;
     }
 
@@ -40,6 +41,22 @@ body {
         transform: translate(-50%, -50%);
     }
 }
+
+
+// main website
+.mainScreen{
+    display: none;
+}
+
+.mainContent{
+    margin-top: 25rem;
+    height: 100vh;
+}
+
+.navbar-link-img{
+    height: 20rem;
+}
+
 
   
  
