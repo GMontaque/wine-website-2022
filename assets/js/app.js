@@ -1,3 +1,12 @@
+// currency
+
+let currency = "£";
+
+$("#currency").on("change", function () {
+	currency = $("#currency").val();
+	$(".currencyType").html(currency);
+});
+
 $("#btn").on("click", function () {
 	$(".overlay").fadeOut();
 	$(".mainScreen").fadeIn();
