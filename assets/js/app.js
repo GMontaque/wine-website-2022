@@ -1,17 +1,54 @@
-// currency
-
-let currency = "£";
-
-$("#currency").on("change", function () {
-	currency = $("#currency").val();
-	$(".currencyType").html(currency);
-});
-
+// homepage overlay
 $("#btn").on("click", function () {
 	$(".overlay").fadeOut();
 	$(".mainScreen").fadeIn();
 });
 
+// shop currency
+
+let currency = "£";
+
+// currency exchange
+// const eurToGBP = 0.86;
+// const dollarToGBP = 0.82;
+const GBPToDollar = 1.21;
+const GBPToEuro = 1.16;
+let currentCurrencyType = $("#currency").val();
+
+$("#currency").on("change", function () {
+	currency = $("#currency").val();
+	$(".currencyType").html(currency);
+	let prices = document.querySelectorAll(".currentAmount");
+
+	// currecny exchange
+	if (currency == "£") {
+		$(prices).each(function () {
+			const basePrice = $(this).attr("data-price");
+			console.log(basePrice);
+			return $(this).html(basePrice);
+		});
+		console.log("change pound");
+	} else if (currency == "€") {
+		$(prices).each(function () {
+			const basePrice = $(this).attr("data-price");
+			console.log(basePrice * GBPToEuro);
+			let newValue = $(this).html(basePrice * GBPToEuro);
+			console.log(newValue);
+			$(this).attr("currentCost", newValue);
+			return newValue;
+		});
+		console.log("change euro");
+	} else {
+		$(prices).each(function () {
+			const basePrice = $(this).attr("data-price");
+			console.log(basePrice * GBPToDollar);
+			return $(this).html(basePrice * GBPToDollar);
+		});
+		console.log("change dollar");
+	}
+});
+
+// remove amount from shopping cart
 $(".removeItem").on("click", function () {
 	// $(".shoppingCart-amount").html("&#8356; <span id='total'>0</span>");
 	let total = parseInt($("#total").html());
@@ -22,12 +59,24 @@ $(".removeItem").on("click", function () {
 	}
 });
 
-// #shop .product button
+// add amount from shopping cart
 $(".addItem").on("click", function () {
 	let price = parseInt($(this).attr("data-price"));
 	let total = parseInt($("#total").html());
 	total = total + price;
 	$("#total").html(total);
+
+	//  let price;
+	// let total = parseInt($("#total").html());
+	// let currentPrice = document.querySelectorAll(".currentAmount");
+
+	// $(currentPrice).each(function (i, e) {
+	// 	let price = parseInt($(this).html());
+	// 	console.log(price);
+	// });
+
+	// total = total + price;
+	// $("#total").html(total);
 });
 
 // style
@@ -41,7 +90,7 @@ $(function () {
 	});
 });
 
-// scrooll
+// scroll effect - homepage
 
 var $animation_elements = $(".animation-element");
 var $window = $(window);
