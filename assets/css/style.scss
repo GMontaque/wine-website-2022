@@ -392,3 +392,13 @@ h1,h2,h4,h5,h6 {
 	}
 	
   }
+
+//   about page
+.container{
+display: flex;
+flex-direction: column;
+}
+
+.testimonial{
+	height: 30rem;
+}

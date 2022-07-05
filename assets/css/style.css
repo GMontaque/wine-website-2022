@@ -365,4 +365,12 @@ h2 {
     height: 85px;
     margin-bottom: 5px;
   }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial {
+  height: 30rem;
 }/*# sourceMappingURL=style.css.map */
