@@ -57,6 +57,8 @@ $(".removeItem").on("click", function () {
 		total = total - price;
 		$("#total").html(total);
 	}
+	let cardTitle = ".cardTitle2";
+	$(cardTitle).remove();
 });
 
 // add amount from shopping cart
@@ -66,17 +68,28 @@ $(".addItem").on("click", function () {
 	total = total + price;
 	$("#total").html(total);
 
-	//  let price;
-	// let total = parseInt($("#total").html());
-	// let currentPrice = document.querySelectorAll(".currentAmount");
+	let cardTitle = $(this).parent().find(".card-title").text();
+	let cardPrice = 20;
+	let cardAmount = 5;
+	// let cardId = $(this).parent().find(".card-title").text();
+	let cardId = "cardTitle2";
 
-	// $(currentPrice).each(function (i, e) {
-	// 	let price = parseInt($(this).html());
-	// 	console.log(price);
-	// });
+	let tableRow = document.createElement("tr");
+	tableRow.classList.add(cardId);
 
-	// total = total + price;
-	// $("#total").html(total);
+	let itemName = document.createElement("th");
+	itemName.innerHTML = cardTitle;
+	tableRow.appendChild(itemName);
+
+	let itemPrice = document.createElement("th");
+	itemPrice.innerHTML = cardPrice;
+	tableRow.appendChild(itemPrice);
+
+	let itemAmount = document.createElement("th");
+	itemAmount.innerHTML = cardAmount;
+	tableRow.appendChild(itemAmount);
+
+	$(".tbod").append(tableRow);
 });
 
 // style
