@@ -19,7 +19,8 @@ $("#currency").on("change", function () {
 	currency = $("#currency").val();
 	$(".currencyType").html(currency);
 	let prices = document.querySelectorAll(".currentAmount");
-
+	// reset total amount
+	$("#total").html(0);
 	// currecny exchange
 	if (currency == "£") {
 		$(prices).each(function () {
@@ -49,21 +50,22 @@ $("#currency").on("change", function () {
 });
 
 // remove amount from shopping cart
-$(".removeItem").on("click", function () {
-	// $(".shoppingCart-amount").html("&#8356; <span id='total'>0</span>");
-	let total = parseInt($("#total").html());
-	let price = parseInt($(this).attr("data-price"));
-	if (total > 0) {
-		total = total - price;
-		$("#total").html(total);
-	}
-	let cardTitle = ".cardTitle2";
-	$(cardTitle).remove();
-});
+// $(".removeItem").on("click", function () {
+// 	// $(".shoppingCart-amount").html("&#8356; <span id='total'>0</span>");
+// 	let total = parseInt($("#total").html());
+// 	let price = parseInt($(this).attr("data-price"));
+// 	if (total > 0) {
+// 		total = total - price;
+// 		$("#total").html(total);
+// 	}
+// 	let cardTitle = ".cardTitle2";
+// 	$(cardTitle).remove();
+// });
 
 // add amount from shopping cart
 $(".addItem").on("click", function () {
-	let price = parseInt($(this).attr("data-price"));
+	// let price = parseInt($(this).attr("data-price"));
+	let price = parseInt($(this).parent().find(".currentAmount").text());
 	let total = parseInt($("#total").html());
 	total = total + price;
 	$("#total").html(total);
@@ -89,6 +91,9 @@ $(".addItem").on("click", function () {
 	itemAmount.innerHTML = cardAmount;
 	tableRow.appendChild(itemAmount);
 
+	$(".cartItems").append(
+		`<div class="bookingItem"><span>${cardTitle}</span> £<span class="thisItem">${cardPrice}</span> <input type="number" data-original-value="1" value="1"></div>`
+	);
 	$(".tbod").append(tableRow);
 });
 
@@ -99,7 +104,7 @@ $(function () {
 		issuesSpeed: 300,
 		datesSpeed: 100,
 		arrowKeys: "true",
-		startAt: 3,
+		startAt: 1,
 	});
 });
 

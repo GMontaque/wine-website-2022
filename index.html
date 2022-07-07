@@ -26,6 +26,7 @@
 		<link rel="stylesheet" href="/assets/css/style.css" />
 	</head>
 	<body>
+		<!-- homepage overlay when page loads -->
 		<div class="container-fluid overlay">
 			<div class="row">
 				<img
@@ -40,6 +41,7 @@
 				</button>
 			</div>
 		</div>
+		<!-- homepage main content -->
 		<div class="mainScreen">
 			<header>
 				<nav class="navbar bg-light fixed-top">
@@ -89,47 +91,7 @@
 									<li class="nav-item">
 										<a class="nav-link" href="shop.html">Shop</a>
 									</li>
-									<!-- <li class="nav-item dropdown">
-										<a
-											class="nav-link dropdown-toggle"
-											href="#"
-											id="offcanvasNavbarDropdown"
-											role="button"
-											data-bs-toggle="dropdown"
-											aria-expanded="false"
-										>
-											Dropdown
-										</a>
-										<ul
-											class="dropdown-menu"
-											aria-labelledby="offcanvasNavbarDropdown"
-										>
-											<li><a class="dropdown-item" href="#">About Us</a></li>
-											<li>
-												<a class="dropdown-item" href="#">Shop</a>
-											</li>
-											<!-- <li>
-												<hr class="dropdown-divider" />
-											</li>
-											<li>
-												<a class="dropdown-item" href="#"
-													>Something else here</a
-												>
-											</li> 
-										</ul>
-									</li> -->
 								</ul>
-								<!-- <form class="d-flex" role="search">
-									<input
-										class="form-control me-2"
-										type="search"
-										placeholder="Search"
-										aria-label="Search"
-									/>
-									<button class="btn btn-outline-success" type="submit">
-										Search
-									</button>
-								</form> -->
 							</div>
 						</div>
 					</div>
@@ -143,11 +105,10 @@
 					<i class="fas fa-arrow-circle-down fa-4x"></i>
 				</div>
 				<div class="row stripText">
-					<h1>
-						Where it all started - middle text - strap line/ motivational text/
-						something about the wine and company
+					<h1 class="stripText-header">
+						Once upon a time - Where it all started
 					</h1>
-					<p>
+					<p class="stripText-description">
 						Wine making has been around for thousands of years. In its basic
 						form, wine production is a natural process that requires very little
 						human intervention. Mother Nature provides everything that is needed
@@ -168,58 +129,63 @@
 				</div>
 
 				<div class="row">
-					<h2>
-						show the history of the wine process as a snaking path with images
-						and text next to each section
-					</h2>
 					<div
 						class="col-md"
-						style="display: grid; grid-template-columns: auto auto"
+						style="
+							display: grid;
+							grid-template-columns: auto auto;
+							grid-gap: 2rem;
+						"
 					>
 						<div class="shopLink">
-							<h3>image shop</h3>
-							<img
+							<!-- <img
 								src="/assets/img/barrels.jpg"
-								class="img-fluid rounded-top"
+								class="img-fluid rounded-top shopLink-img"
 								alt=""
-							/>
+							/> -->
+							<h3 class="shopLink-title">image shop</h3>
 						</div>
+
 						<div class="spaceImg">
-							<img
+							<!-- <img
 								src="/assets/img/spacer.jpg"
 								class="img-fluid rounded-top"
 								alt=""
-							/>
+							/> -->
+						</div>
+
+						<div class="spaceImg">
+							<!-- <img
+								src="/assets/img/spacer.jpg"
+								class="img-fluid rounded-top"
+								alt=""
+							/> -->
 						</div>
 						<div class="tourLink">
-							<h3>image tour</h3>
-							<img
+							<h3 class="tourLink-title">image tour</h3>
+							<!-- <img
 								src="/assets/img/wineTasting.jpg"
-								class="img-fluid rounded-top"
+								class="img-fluid rounded-top tourLink-img"
 								alt=""
-							/>
-						</div>
-						<div class="spaceImg">
-							<img
-								src="/assets/img/spacer.jpg"
-								class="img-fluid rounded-top"
-								alt=""
-							/>
+							/> -->
 						</div>
 					</div>
 					<div class="col-md">
+						<h2>The lifecycle of wine, from grape to your glass</h2>
 						<div id="timeline">
 							<ul id="dates">
-								<li><a href="#1900" class="selected">1900</a></li>
-								<li><a href="#1930">1930</a></li>
-								<li><a href="#1944">1944</a></li>
-								<li><a href="#1950">1950</a></li>
-								<li><a href="#1971">1971</a></li>
-								<li><a href="#1977">1977</a></li>
-								<li><a href="#1989">1989</a></li>
-								<li><a href="#1999">1999</a></li>
-								<li><a href="#2001">2001</a></li>
-								<li><a href="#2011">2011</a></li>
+								<li>
+									<a href="#1900" class="selected">Planting</a>
+								</li>
+								<li><a href="#1930">Flowering</a></li>
+								<li><a href="#1944">Fruit Set</a></li>
+								<li><a href="#1950">Veraison</a></li>
+								<li><a href="#1971">Harvest</a></li>
+								<li><a href="#1977">Crush</a></li>
+								<li><a href="#1989">Press</a></li>
+								<li><a href="#1999">Fermentation</a></li>
+								<li><a href="#2001">Racking</a></li>
+								<li><a href="#2011">The Bottle</a></li>
 							</ul>
 							<ul id="issues">
 								<li id="1900" class="selected">
