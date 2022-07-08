@@ -139,8 +139,8 @@ a.selected {
 }
 
 #timeline {
-  width: 500px;
-  height: 600px;
+  width: 60%;
+  height: 90vh;
   overflow: hidden;
   margin: 40px auto;
   position: relative;
@@ -148,7 +148,7 @@ a.selected {
 }
 
 #dates {
-  width: 100px;
+  width: 20%;
   height: 600px;
   overflow: hidden;
   float: left;
@@ -174,14 +174,14 @@ a.selected {
 }
 
 #issues {
-  width: 400px;
-  height: 600px;
-  overflow: hidden;
-  float: left;
+  width: 100%;
+  height: 90vh;
 }
 
 #issues li {
-  height: 600px;
+  margin-left: 5rem;
+  height: 90vh;
+  overflow: auto;
   background-color: red;
   list-style: none;
   text-align: center;
@@ -220,7 +220,7 @@ a.selected {
 
 #grad_top,
 #grad_bottom {
-  width: 500px;
+  width: 100%;
   height: 80px;
   position: absolute;
 }
@@ -312,7 +312,7 @@ a.selected {
 /*animation slide left styled for testimonials*/
 .animation-element.slide-left.testimonial {
   float: left;
-  width: 47%;
+  width: 70%;
   margin: 0% 1.5% 3% 1.5%;
   background: #F5F5F5;
   padding: 15px;
@@ -326,12 +326,12 @@ a.selected {
 }
 
 .animation-element.slide-left.testimonial:nth-of-type(odd) {
-  width: 48.5%;
+  width: 70%;
   margin: 0% 1.5% 3% 0%;
 }
 
 .animation-element.slide-left.testimonial:nth-of-type(even) {
-  width: 48.5%;
+  width: 70%;
   margin: 0% 0% 3% 1.5%;
 }
 
