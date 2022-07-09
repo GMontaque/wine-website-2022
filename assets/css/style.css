@@ -269,18 +269,35 @@ a.selected {
 }
 
 /*about page*/
+.aboutPageTitle {
+  text-align: center;
+  font-size: 10rem;
+}
+
 .container {
   display: flex;
   flex-direction: column;
 }
 
 .testimonial {
-  height: 30rem;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header h3 {
+  color: wheat;
+}
+
+.content {
+  width: 30%;
+  font-size: 2rem;
+  color: white;
 }
 
 /*scroll effect - about page*/
 .main-container {
-  background: #fff;
   max-width: 1000px;
   margin: 25px auto 25px auto;
   position: relative;
@@ -295,6 +312,44 @@ a.selected {
 .animation-element {
   opacity: 0;
   position: relative;
+}
+
+/*imamge mixin for about page*/
+.animation-element:nth-child(1) {
+  background: url(/assets/img/family1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.animation-element:nth-child(2) {
+  margin-left: 30% !important;
+  background: url(/assets/img/family2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.animation-element:nth-child(3) {
+  background: url(/assets/img/family3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.animation-element:nth-child(4) {
+  margin-left: 30% !important;
+  background: url(/assets/img/family4.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.animation-element:nth-child(5) {
+  background: url(/assets/img/modernFamily.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 /*animation element sliding left*/
@@ -314,66 +369,15 @@ a.selected {
   float: left;
   width: 70%;
   margin: 0% 1.5% 3% 1.5%;
-  background: #F5F5F5;
   padding: 15px;
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
   border: solid 1px #EAEAEA;
 }
 
-.animation-element.slide-left.testimonial:hover,
-.animation-element.slide-left.testimonial:active {
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
-}
-
-.animation-element.slide-left.testimonial:nth-of-type(odd) {
-  width: 70%;
-  margin: 0% 1.5% 3% 0%;
-}
-
-.animation-element.slide-left.testimonial:nth-of-type(even) {
-  width: 70%;
-  margin: 0% 0% 3% 1.5%;
-}
-
-.animation-element.slide-left.testimonial .header {
-  float: left;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.animation-element.slide-left.testimonial .left {
-  float: left;
-  margin-right: 15px;
-}
-
-.animation-element.slide-left.testimonial .right {
-  float: left;
-}
-
 .animation-element.slide-left.testimonial img {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
+  width: 50%;
+  height: 50%;
   box-shadow: 0px 1px 3px rgba(51, 51, 51, 0.5);
-}
-
-.animation-element.slide-left.testimonial h3 {
-  margin: 0px 0px 5px 0px;
-}
-
-.animation-element.slide-left.testimonial h4 {
-  margin: 0px 0px 5px 0px;
-}
-
-.animation-element.slide-left.testimonial .content {
-  float: left;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.animation-element.slide-left.testimonial i {
-  color: #aaa;
-  margin-right: 5px;
 }
 
 /*media queries for small devices*/
