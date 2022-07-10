@@ -91,10 +91,50 @@ $(".addItem").on("click", function () {
 	itemAmount.innerHTML = cardAmount;
 	tableRow.appendChild(itemAmount);
 
+	// $(".cartItems").append(
+	// 	`<div class="bookingItem"><span>${cardTitle}</span> £<span class="thisItem">${cardPrice}</span> <input type="number" data-original-value="1" value="1"></div>`
+	// );
 	$(".cartItems").append(
-		`<div class="bookingItem"><span>${cardTitle}</span> £<span class="thisItem">${cardPrice}</span> <input type="number" data-original-value="1" value="1"></div>`
+		`<div class="cartItem">
+			<div class="cartItem-left">
+				<img
+					src="/assets/img/product1.jpg"
+					class="img-fluid rounded-top"
+					alt=""
+				/>
+			</div>
+			<div class="cartItem-right">
+				<h3 class="cartItem-right-itemName">Wine 1</h3>
+				<p class="cartItem-right-itemPrice">£20</p>
+				<div class="mb-3 cartItem-right-select">
+					<label for="" class="form-label">Qty</label>
+					<select
+						class="form-select form-select-lg mb-3 quantity"
+						aria-label=".form-select-lg "
+					></select>
+				</div>
+				<button
+					type="button"
+					class="cartItem-right-button btn btn-outline-primary"
+				>
+					Remove
+				</button>
+			</div>
+		</div>`
 	);
+
 	$(".tbod").append(tableRow);
+});
+
+// shop select quanutity shopping cart
+$(function () {
+	var $select = $(".quantity");
+	for (i = 1; i <= 50; i++) {
+		$select.append($("<option></option>").val(i).html(i));
+	}
+
+	// use the select attribute to update quanity in shopping cart if a user click on the item in the shop again
+	$(".quantity").val("16").attr("selected");
 });
 
 // style

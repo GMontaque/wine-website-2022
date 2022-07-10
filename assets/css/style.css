@@ -404,4 +404,19 @@ a.selected {
     margin-bottom: 5px;
   }
 }
-/*shop page*//*# sourceMappingURL=style.css.map */
+/*shop page*/
+.cartItem {
+  display: flex;
+  flex-direction: row;
+  width: 320px;
+}
+.cartItem-left {
+  width: 50%;
+}
+.cartItem-right {
+  width: 50%;
+  padding-left: 5rem;
+}
+.cartItem-right-select, .cartItem-right-button {
+  width: 90%;
+}/*# sourceMappingURL=style.css.map */

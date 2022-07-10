@@ -82,6 +82,34 @@
 		<main class="container-fluid mainContent">
 			<div class="row">
 				<h1>Shop Page</h1>
+				<!-- example shopping cart item -->
+				<div class="cartItem">
+					<div class="cartItem-left">
+						<img
+							src="/assets/img/product1.jpg"
+							class="img-fluid rounded-top"
+							alt=""
+						/>
+					</div>
+					<div class="cartItem-right">
+						<h3 class="cartItem-right-itemName">Wine 1</h3>
+						<p class="cartItem-right-itemPrice">£20</p>
+						<div class="mb-3 cartItem-right-select">
+							<label for="" class="form-label">Qty</label>
+							<select
+								class="form-select form-select-lg mb-3 quantity"
+								aria-label=".form-select-lg "
+							></select>
+						</div>
+						<button
+							type="button"
+							class="cartItem-right-button btn btn-outline-primary"
+						>
+							Remove
+						</button>
+					</div>
+				</div>
+				<!-- example shopping cart item -->
 				<div class="mb-3">
 					<label for="" class="form-label">Currency</label>
 					<select class="form-select" name="" id="currency">

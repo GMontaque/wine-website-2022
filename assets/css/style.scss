@@ -519,3 +519,24 @@ a.selected {
 }
 
 /*shop page*/
+
+.cartItem{
+	display: flex;
+	flex-direction: row;
+	width: 320px;
+
+	&-left{
+		width: 50%;
+	}
+
+	&-right{
+		width: 50%;
+		padding-left: 5rem;
+
+		&-select,
+		&-button{
+			width: 90%;
+		}
+		
+	}
+}
