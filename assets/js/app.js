@@ -4,13 +4,10 @@ $("#btn").on("click", function () {
 	$(".mainScreen").fadeIn();
 });
 
-// shop currency
+// shop currency change
 
 let currency = "£";
 
-// currency exchange
-// const eurToGBP = 0.86;
-// const dollarToGBP = 0.82;
 const GBPToDollar = 1.21;
 const GBPToEuro = 1.16;
 let currentCurrencyType = $("#currency").val();
@@ -48,19 +45,6 @@ $("#currency").on("change", function () {
 		console.log("change dollar");
 	}
 });
-
-// remove amount from shopping cart
-// $(".removeItem").on("click", function () {
-// 	// $(".shoppingCart-amount").html("&#8356; <span id='total'>0</span>");
-// 	let total = parseInt($("#total").html());
-// 	let price = parseInt($(this).attr("data-price"));
-// 	if (total > 0) {
-// 		total = total - price;
-// 		$("#total").html(total);
-// 	}
-// 	let cardTitle = ".cardTitle2";
-// 	$(cardTitle).remove();
-// });
 
 // add amount from shopping cart
 $(".addItem").on("click", function () {
@@ -111,31 +95,6 @@ $(".addItem").on("click", function () {
 		total = total - $(this).parent().find(".cartItem-right-itemPrice").text();
 		$("#total").html(total);
 	});
-
-	// let price = parseInt($(this).attr("data-price"));
-	// let cardPrice = 20;
-	// let cardAmount = 5;
-	// let cardId = $(this).parent().find(".card-title").text();
-	// let cardId = "cardTitle2";
-
-	// let tableRow = document.createElement("tr");
-	// tableRow.classList.add(cardId);
-
-	// let itemName = document.createElement("th");
-	// itemName.innerHTML = cardTitle;
-	// tableRow.appendChild(itemName);
-
-	// let itemPrice = document.createElement("th");
-	// itemPrice.innerHTML = cardPrice;
-	// tableRow.appendChild(itemPrice);
-
-	// let itemAmount = document.createElement("th");
-	// itemAmount.innerHTML = cardAmount;
-	// tableRow.appendChild(itemAmount);
-
-	// $(".cartItems").append(
-	// 	`<div class="bookingItem"><span>${cardTitle}</span> £<span class="thisItem">${cardPrice}</span> <input type="number" data-original-value="1" value="1"></div>`
-	// );
 });
 
 // shop select quanutity shopping cart
@@ -149,7 +108,7 @@ $(function () {
 	$(".quantity").val("16").attr("selected");
 });
 
-// style
+// home page slide style
 $(function () {
 	$().timelinr({
 		orientation: "vertical",

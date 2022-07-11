@@ -43,7 +43,7 @@ body {
     }
 }
 
-/*homepage main website*/
+/*************homepage main website**************/
 
 .mainScreen{
     display: none;
@@ -79,7 +79,6 @@ body {
     position: absolute;
     top: 50%;
     left: 10%;
-    // transform: translate(-50%, -50%);
     color: white;
     width: max-content;
     padding: 1rem;
@@ -125,12 +124,11 @@ footer{
 	background-size: cover;
 }
   
-/* Bottom right text */
+/* shop nd wine tour text */
 .tourLink-title,.shopLink-title {
 	position: absolute;
     bottom: 5%;
    	right: 5%;
-    // transform: translate(-50%, -50%);
     color: white;
     width: max-content;
     padding: 1rem;
@@ -153,24 +151,6 @@ a:hover,
 a.selected {
 	color: #ffcc00;
 }
-
-// h1,h2,h4,h5,h6 {
-// 	text-align: center;
-// 	color: #ccc;
-// 	text-shadow: #000 1px 1px 2px;
-// 	margin-bottom: 5px;
-// }
-// 	h1 {
-// 		font-size: 18px;
-// 	}
-// 	h2 {
-// 		font-size: 14px;
-// 	}
-
-// .sociales {
-// 	text-align: center;
-// 	margin-bottom: 20px;
-// }
 
 #timeline {
 	width: 60%;
@@ -211,12 +191,10 @@ a.selected {
 #issues {
 	width: 100%;
 	height: 90vh;
-	// overflow: auto;
-	// float: left;
+	
 }	
 
 #issues li {
-	// max-width: 300px; 
 	margin-left: 5rem;
 	height: 90vh;
 	overflow: auto;
@@ -234,7 +212,6 @@ a.selected {
 }
 
 #issues li img {
-	// float: left;
     width: 200px; 
 	margin: 10px 30px 10px 50px;
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE 8 */   
@@ -316,7 +293,7 @@ a.selected {
 #prev.disabled {
 	opacity: 0.2;
 }
-/*about page*/
+/*********************about page******************/
 
 .aboutPageTitle{
 	text-align: center;
@@ -443,56 +420,8 @@ a.selected {
 	box-shadow: 0px 1px 3px rgba(51, 51, 51, 0.5);
 }
 
-// .animation-element.slide-left.testimonial:hover,
-// .animation-element.slide-left.testimonial:active{
-// 	box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
-// }
   
-// .animation-element.slide-left.testimonial:nth-of-type(odd) {
-// 	width: 70%;
-// 	margin: 0% 1.5% 3.0% 0%;
-// }
-  
-// .animation-element.slide-left.testimonial:nth-of-type(even) {
-// 	width: 70%;
-// 	margin: 0% 0% 3.0% 1.5%;
-// }
-  
-// .animation-element.slide-left.testimonial .header{
-// 	float: left;
-// 	width: 100%;
-// 	margin-bottom: 10px;
-// }
-
-// .animation-element.slide-left.testimonial .left{
-// 	float: left;
-// 	margin-right: 15px;
-// }
-
-// .animation-element.slide-left.testimonial .right{
-// 	float: left;
-// }
-  
-// .animation-element.slide-left.testimonial h3 {
-// 	margin: 0px 0px 5px 0px;
-// }
-  
-// .animation-element.slide-left.testimonial h4 {
-// 	margin: 0px 0px 5px 0px;
-// }
-  
-// .animation-element.slide-left.testimonial .content {
-// 	float: left;
-// 	width:100%;
-// 	margin-bottom: 10px;
-// }
-  
-// .animation-element.slide-left.testimonial i {
-// 	color: #aaa;
-// 	margin-right: 5px;
-// }
-  
-/*media queries for small devices*/
+/*media queries for small devices about page slide*/
 @media screen and (max-width: 678px){
 	/*testimonials*/
 	.animation-element.slide-left.testimonial,
@@ -518,7 +447,7 @@ a.selected {
 		
 }
 
-/*shop page*/
+/***********************shop page*******************/
 
 .cartItem{
 	display: flex;
@@ -600,7 +529,5 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-// input:disabled{
-//     background-color:white;
-// }
+
        

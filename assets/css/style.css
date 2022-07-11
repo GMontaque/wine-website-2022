@@ -39,7 +39,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/*homepage main website*/
+/*************homepage main website**************/
 .mainScreen {
   display: none;
 }
@@ -112,7 +112,7 @@ footer {
   background-size: cover;
 }
 
-/* Bottom right text */
+/* shop nd wine tour text */
 .tourLink-title, .shopLink-title {
   position: absolute;
   bottom: 5%;
@@ -266,7 +266,7 @@ a.selected {
   opacity: 0.2;
 }
 
-/*about page*/
+/*********************about page******************/
 .aboutPageTitle {
   text-align: center;
   font-size: 10rem;
@@ -378,7 +378,7 @@ a.selected {
   box-shadow: 0px 1px 3px rgba(51, 51, 51, 0.5);
 }
 
-/*media queries for small devices*/
+/*media queries for small devices about page slide*/
 @media screen and (max-width: 678px) {
   /*testimonials*/
   .animation-element.slide-left.testimonial,
@@ -400,7 +400,7 @@ a.selected {
     margin-bottom: 5px;
   }
 }
-/*shop page*/
+/***********************shop page*******************/
 .cartItem {
   display: flex;
   flex-direction: row;
