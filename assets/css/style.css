@@ -194,10 +194,8 @@ a.selected {
 #issues li img {
   width: 200px;
   margin: 10px 30px 10px 50px;
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)";
-  /* IE 8 */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
-  /* IE 6 & 7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE 8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF); /* IE 6 & 7 */
   zoom: 1;
   transition: all 2s ease-in-out;
   transform: scale(0.7, 0.7);
@@ -389,7 +387,6 @@ a.selected {
     width: 100%;
     margin: 0px 0px 20px 0px;
   }
-
   .animation-element.slide-left.testimonial .right,
 .animation-element.slide-left.testimonial .left,
 .animation-element.slide-left.testimonial .content,
@@ -397,7 +394,6 @@ a.selected {
     text-align: center;
     float: none;
   }
-
   .animation-element.slide-left.testimonial img {
     width: 85px;
     height: 85px;
@@ -419,4 +415,72 @@ a.selected {
 }
 .cartItem-right-select, .cartItem-right-button {
   width: 90%;
+}
+
+.qty .count {
+  color: #000;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30px;
+  padding: 0 2px;
+  min-width: 35px;
+  text-align: center;
+}
+
+.qty .plus {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  color: white;
+  width: 30px;
+  height: 30px;
+  font: 30px/1 Arial, sans-serif;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.qty .minus {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  color: white;
+  width: 30px;
+  height: 30px;
+  font: 30px/1 Arial, sans-serif;
+  text-align: center;
+  border-radius: 50%;
+  background-clip: padding-box;
+}
+
+div {
+  text-align: center;
+}
+
+.minus:hover {
+  background-color: #717fe0 !important;
+}
+
+.plus:hover {
+  background-color: #717fe0 !important;
+}
+
+/*Prevent text selection*/
+span {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+input {
+  border: 0;
+  width: 2%;
+  background-color: white;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */

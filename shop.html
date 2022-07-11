@@ -25,7 +25,7 @@
 		<link rel="stylesheet" href="/assets/css/style.css" />
 	</head>
 	<body>
-		<header>
+		<header style="position: fixed; width: 99.2vw; z-index: 1">
 			<nav class="navbar bg-light fixed-top">
 				<div class="container-fluid">
 					<a class="navbar-brand navbar-link" href="#"
@@ -34,15 +34,30 @@
 							class="img-fluid rounded-top navbar-link-img"
 							alt=""
 					/></a>
-					<button
-						class="navbar-toggler"
-						type="button"
-						data-bs-toggle="offcanvas"
-						data-bs-target="#offcanvasNavbar"
-						aria-controls="offcanvasNavbar"
-					>
-						<span class="navbar-toggler-icon"></span>
-					</button>
+					<div class="buttons" style="display: flex; flex-direction: column">
+						<!-- nav bar button -->
+						<button
+							class="navbar-toggler"
+							type="button"
+							data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasNavbar"
+							aria-controls="offcanvasNavbar"
+						>
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<!-- cart button -->
+						<button
+							class="navbar-toggler"
+							type="button"
+							data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasCart"
+							aria-controls="offcanvasCart"
+							style="margin-top: 3rem"
+						>
+							<i class="fas fa-shopping-cart fa-2x"></i>
+							View Cart
+						</button>
+					</div>
 					<div
 						class="offcanvas offcanvas-end"
 						tabindex="-1"
@@ -79,11 +94,42 @@
 				</div>
 			</nav>
 		</header>
+		<!-- shopping cart -->
+
+		<div
+			class="offcanvas offcanvas-end"
+			tabindex="-1"
+			id="offcanvasCart"
+			aria-labelledby="offcanvasCartLabel"
+		>
+			<div class="offcanvas-header">
+				<!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5> -->
+				<button
+					type="button"
+					class="btn-close"
+					data-bs-dismiss="offcanvas"
+					aria-label="Close"
+				></button>
+			</div>
+			<div class="offcanvas-body">
+				<!-- cart items -->
+				<div class="shoppingCart">
+					<h3 class="shoppingCart-title">Cart Total</h3>
+					<p class="shoppingCart-amount" style="font-size: 2rem">
+						<span class="currencyType">£</span> <span id="total">0</span>
+					</p>
+					<div class="cartItems"></div>
+				</div>
+			</div>
+		</div>
+		<!-- shop items -->
+
 		<main class="container-fluid mainContent">
+			<div style="height: 20rem"></div>
 			<div class="row">
 				<h1>Shop Page</h1>
 				<!-- example shopping cart item -->
-				<div class="cartItem">
+				<!-- <div class="cartItem">
 					<div class="cartItem-left">
 						<img
 							src="/assets/img/product1.jpg"
@@ -94,12 +140,18 @@
 					<div class="cartItem-right">
 						<h3 class="cartItem-right-itemName">Wine 1</h3>
 						<p class="cartItem-right-itemPrice">£20</p>
-						<div class="mb-3 cartItem-right-select">
-							<label for="" class="form-label">Qty</label>
-							<select
-								class="form-select form-select-lg mb-3 quantity"
-								aria-label=".form-select-lg "
-							></select>
+
+						<h4>Qty</h4>
+						<div class="qty mt-5">
+							<span class="minus bg-dark">-</span>
+							<input
+								type="number"
+								class="count"
+								name="qty"
+								value="1"
+								disabled
+							/>
+							<span class="plus bg-dark">+</span>
 						</div>
 						<button
 							type="button"
@@ -108,8 +160,8 @@
 							Remove
 						</button>
 					</div>
-				</div>
-				<!-- example shopping cart item -->
+				</div> -->
+				<!-- currecny change -->
 				<div class="mb-3">
 					<label for="" class="form-label">Currency</label>
 					<select class="form-select" name="" id="currency">
@@ -117,27 +169,6 @@
 						<option value="$">Dollar</option>
 						<option value="€">Euro</option>
 					</select>
-				</div>
-				<div class="shoppingCart">
-					<h3 class="shoppingCart-title">Cart Total</h3>
-					<p class="shoppingCart-amount" style="font-size: 2rem">
-						<span class="currencyType">£</span> <span id="total">0</span>
-					</p>
-					<div class="cartItems"></div>
-					<table class="productCart">
-						<tbody class="tbod">
-							<tr>
-								<th class="tg-0lax">Address</th>
-								<th class="tg-0lax">12344</th>
-								<th class="tg-0lax">Address</th>
-							</tr>
-							<tr>
-								<th class="tg-0lax">Address</th>
-								<th class="tg-0lax">12344</th>
-								<th class="tg-0lax">Address</th>
-							</tr>
-						</tbody>
-					</table>
 				</div>
 			</div>
 			<div class="row">

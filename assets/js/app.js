@@ -64,38 +64,14 @@ $("#currency").on("change", function () {
 
 // add amount from shopping cart
 $(".addItem").on("click", function () {
-	// let price = parseInt($(this).attr("data-price"));
+	let cardTitle = $(this).parent().find(".card-title").text();
 	let price = parseInt($(this).parent().find(".currentAmount").text());
 	let total = parseInt($("#total").html());
 	total = total + price;
 	$("#total").html(total);
 
-	let cardTitle = $(this).parent().find(".card-title").text();
-	let cardPrice = 20;
-	let cardAmount = 5;
-	// let cardId = $(this).parent().find(".card-title").text();
-	let cardId = "cardTitle2";
-
-	let tableRow = document.createElement("tr");
-	tableRow.classList.add(cardId);
-
-	let itemName = document.createElement("th");
-	itemName.innerHTML = cardTitle;
-	tableRow.appendChild(itemName);
-
-	let itemPrice = document.createElement("th");
-	itemPrice.innerHTML = cardPrice;
-	tableRow.appendChild(itemPrice);
-
-	let itemAmount = document.createElement("th");
-	itemAmount.innerHTML = cardAmount;
-	tableRow.appendChild(itemAmount);
-
-	// $(".cartItems").append(
-	// 	`<div class="bookingItem"><span>${cardTitle}</span> £<span class="thisItem">${cardPrice}</span> <input type="number" data-original-value="1" value="1"></div>`
-	// );
 	$(".cartItems").append(
-		`<div class="cartItem">
+		`<div class="cartItem" >
 			<div class="cartItem-left">
 				<img
 					src="/assets/img/product1.jpg"
@@ -104,14 +80,20 @@ $(".addItem").on("click", function () {
 				/>
 			</div>
 			<div class="cartItem-right">
-				<h3 class="cartItem-right-itemName">Wine 1</h3>
-				<p class="cartItem-right-itemPrice">£20</p>
-				<div class="mb-3 cartItem-right-select">
-					<label for="" class="form-label">Qty</label>
-					<select
-						class="form-select form-select-lg mb-3 quantity"
-						aria-label=".form-select-lg "
-					></select>
+				<h3 class="cartItem-right-itemName">${cardTitle}</h3>
+				<p class="cartItem-right-itemPrice">${price}</p>
+
+				<h4>Qty</h4>
+				<div class="qty mt-5">
+					<span class="minus bg-dark">-</span>
+					<input
+						type="number"
+						class="count"
+						name="qty"
+						value="1"
+						disabled
+					/>
+					<span class="plus bg-dark">+</span>
 				</div>
 				<button
 					type="button"
@@ -123,7 +105,37 @@ $(".addItem").on("click", function () {
 		</div>`
 	);
 
-	$(".tbod").append(tableRow);
+	// remove item from cart
+	$(".cartItem-right-button").on("click", function () {
+		let tree = $(this).parent().parent().remove();
+		total = total - $(this).parent().find(".cartItem-right-itemPrice").text();
+		$("#total").html(total);
+	});
+
+	// let price = parseInt($(this).attr("data-price"));
+	// let cardPrice = 20;
+	// let cardAmount = 5;
+	// let cardId = $(this).parent().find(".card-title").text();
+	// let cardId = "cardTitle2";
+
+	// let tableRow = document.createElement("tr");
+	// tableRow.classList.add(cardId);
+
+	// let itemName = document.createElement("th");
+	// itemName.innerHTML = cardTitle;
+	// tableRow.appendChild(itemName);
+
+	// let itemPrice = document.createElement("th");
+	// itemPrice.innerHTML = cardPrice;
+	// tableRow.appendChild(itemPrice);
+
+	// let itemAmount = document.createElement("th");
+	// itemAmount.innerHTML = cardAmount;
+	// tableRow.appendChild(itemAmount);
+
+	// $(".cartItems").append(
+	// 	`<div class="bookingItem"><span>${cardTitle}</span> £<span class="thisItem">${cardPrice}</span> <input type="number" data-original-value="1" value="1"></div>`
+	// );
 });
 
 // shop select quanutity shopping cart
@@ -178,3 +190,16 @@ function check_if_in_view() {
 
 $window.on("scroll resize", check_if_in_view);
 $window.trigger("scroll");
+
+/*shopping cart qty*/
+$(document).ready(function () {
+	$(document).on("click", ".plus", function () {
+		$(".count").val(parseInt($(".count").val()) + 1);
+	});
+	$(document).on("click", ".minus", function () {
+		$(".count").val(parseInt($(".count").val()) - 1);
+		if ($(".count").val() == 0) {
+			$(".count").val(1);
+		}
+	});
+});
