@@ -29,18 +29,19 @@ $("#currency").on("change", function () {
 	} else if (currency == "€") {
 		$(prices).each(function () {
 			const basePrice = $(this).attr("data-price");
-			console.log(basePrice * GBPToEuro);
-			let newValue = $(this).html(basePrice * GBPToEuro);
-			console.log(newValue);
-			$(this).attr("currentCost", newValue);
-			return newValue;
+			let calculationEuro = Math.round(basePrice * GBPToEuro * 100) / 100;
+			console.log(calculationEuro);
+			return $(this).html(calculationEuro);
+			// let newValue = $(this).html(calculationEuro);
+			// $(this).attr("currentCost", newValue);
 		});
 		console.log("change euro");
 	} else {
 		$(prices).each(function () {
 			const basePrice = $(this).attr("data-price");
-			console.log(basePrice * GBPToDollar);
-			return $(this).html(basePrice * GBPToDollar);
+			let calculationDollar = Math.round(basePrice * GBPToDollar * 100) / 100;
+			console.log(calculationDollar);
+			return $(this).html(calculationDollar);
 		});
 		console.log("change dollar");
 	}
@@ -49,10 +50,13 @@ $("#currency").on("change", function () {
 // add amount from shopping cart
 $(".addItem").on("click", function () {
 	let cardTitle = $(this).parent().find(".card-title").text();
-	let price = parseInt($(this).parent().find(".currentAmount").text());
-	let total = parseInt($("#total").html());
+	let price =
+		Math.round($(this).parent().find(".currentAmount").text() * 100) / 100;
+	console.log(price + "price");
+	let total = parseFloat($("#total").html());
 	total = total + price;
 	$("#total").html(total);
+	console.log(total);
 
 	$(".cartItems").append(
 		`<div class="cartItem" >
@@ -91,9 +95,9 @@ $(".addItem").on("click", function () {
 
 	// remove item from cart
 	$(".cartItem-right-button").on("click", function () {
-		let tree = $(this).parent().parent().remove();
+		$(this).parent().parent().remove();
 		total = total - $(this).parent().find(".cartItem-right-itemPrice").text();
-		$("#total").html(total);
+		$("#total").html(Math.round(total * 100) / 100);
 	});
 });
 
@@ -153,10 +157,10 @@ $window.trigger("scroll");
 /*shopping cart qty*/
 $(document).ready(function () {
 	$(document).on("click", ".plus", function () {
-		$(".count").val(parseInt($(".count").val()) + 1);
+		$(".count").val(parseFloat($(".count").val()) + 1);
 	});
 	$(document).on("click", ".minus", function () {
-		$(".count").val(parseInt($(".count").val()) - 1);
+		$(".count").val(parseFloat($(".count").val()) - 1);
 		if ($(".count").val() == 0) {
 			$(".count").val(1);
 		}
