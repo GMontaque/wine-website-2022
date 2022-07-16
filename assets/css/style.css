@@ -82,8 +82,17 @@ body {
   border: 10px solid lightgreen;
 }
 
-footer {
+/************footer***************/
+.footer {
   border: 5px solid lightgreen;
+}
+.footer-right-openingTimes {
+  text-align: left;
+  list-style: none;
+}
+
+.fa-ul > li {
+  text-align: left;
 }
 
 /* shop and wine tour*/

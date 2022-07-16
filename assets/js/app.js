@@ -52,7 +52,7 @@ $(".addItem").on("click", function () {
 	let cardTitle = $(this).parent().find(".card-title").text();
 	let price =
 		Math.round($(this).parent().find(".currentAmount").text() * 100) / 100;
-	console.log(price + "price");
+	console.log("price" + price);
 	let total = parseFloat($("#total").html());
 	total = total + price;
 	$("#total").html(total);
@@ -92,7 +92,8 @@ $(".addItem").on("click", function () {
 			</div>
 		</div>`
 	);
-
+	let counter = parseInt($(".count").val());
+	console.log(counter);
 	// remove item from cart
 	$(".cartItem-right-button").on("click", function () {
 		$(this).parent().parent().remove();
