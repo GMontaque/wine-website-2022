@@ -69,7 +69,7 @@ $(".addItem").on("click", function () {
 			</div>
 			<div class="cartItem-right">
 				<h3 class="cartItem-right-itemName">${cardTitle}</h3>
-				<p class="cartItem-right-itemPrice">${price}</p>
+				<p class="cartItem-right-itemPrice" base-value="${price}">${price}</p>
 
 				<h4>Qty</h4>
 				<div class="qty mt-5">
@@ -158,12 +158,29 @@ $window.trigger("scroll");
 /*shopping cart qty*/
 $(document).ready(function () {
 	$(document).on("click", ".plus", function () {
+		let price = $(this)
+			.parent()
+			.parent()
+			.find(".cartItem-right-itemPrice")
+			.attr("base-value");
 		$(".count").val(parseFloat($(".count").val()) + 1);
+		let totalCount = $(".count").val();
+		let newValue = $(".cartItem-right-itemPrice").html(price * totalCount);
+		console.log(newValue.text());
+		$("#total").html(newValue.text());
 	});
 	$(document).on("click", ".minus", function () {
-		$(".count").val(parseFloat($(".count").val()) - 1);
-		if ($(".count").val() == 0) {
-			$(".count").val(1);
+		if ($(".count").val() > 1) {
+			let price = $(this)
+				.parent()
+				.parent()
+				.find(".cartItem-right-itemPrice")
+				.attr("base-value");
+			// let totalCount = $(".count").val();
+			$(".count").val(parseFloat($(".count").val()) - 1);
+			let newItemTotal = $(".cartItem-right-itemPrice").html() - price;
+			$(".cartItem-right-itemPrice").html(newItemTotal);
+			$("#total").html(newItemTotal);
 		}
 	});
 });
